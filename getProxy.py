@@ -1,4 +1,4 @@
-#!python3
+
 #-*-coding:utf-8-*-
 
 import urllib,urllib.request,time
@@ -34,7 +34,7 @@ class GetProxy:
 
     def run(self,baseUrl = 'https://www.kuaidaili.com/free/intr/',n = 20):
         for i in range(n):
-            url = baseUrl + str(n + 1)
+            url = baseUrl + str(i + 1)
             html = self.sendReauest(url)
             self.htmlParse(html)
             time.sleep(1)
@@ -44,5 +44,5 @@ class GetProxy:
 
 if __name__  ==  "__main__":
     app = GetProxy()
-    app.run()
+    app.run(n = 20)
     
